@@ -24,6 +24,9 @@
 \PassOptionsToPackage{ngerman}{babel}
 \RequirePackage{babel}
 \RequirePackage{csquotes}
+%\DeclareQuoteStyle[ngerman]{guillemets}
+%  {\guillemotleft}{\guillemotright}
+%  [\guillemotleft]{\guillemotright}
 
 % -----------------------------------------------------------------------------
 % 3. SEITEN-LAYOUT
@@ -62,8 +65,27 @@
 	backend=biber,
 	style=authoryear,
 	sorting=nyt,
-	maxbibnames=99
+	maxbibnames=99,
+	maxcitenames=2,
+	mincitenames=1,
+	% Zitierstil: [Autor, Jahr]
 ]{biblatex}
+
+% Zitate mit eckigen Klammern
+\DeclareCiteCommand{\cite}[\mkbibbrackets]
+{\usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+	\usebibmacro{cite}}
+{}
+{\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibbrackets]
+{\usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+	\usebibmacro{cite}}
+{}
+{\usebibmacro{postnote}}
+
 \addbibresource{Bibliography.bib}
 
 % -----------------------------------------------------------------------------
@@ -155,7 +177,7 @@
 	linktocpage=true,
 	colorlinks=true,
 	linkcolor=black,
-	urlcolor=black,
+	urlcolor=blue,
 	citecolor=black,
 	filecolor=black,
 	pdfborder={0 0 0},
