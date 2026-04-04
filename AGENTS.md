@@ -6,26 +6,24 @@ This repository contains a LaTeX-based book project. The following guidelines he
 
 ```
 AI-Books/
-├── Book/
-│   ├── makefile           # Build automation
-│   ├── install.sh        # Dependency installation
-│   ├── README.md
-│   ├── LICENSE
-│   └── src/main/latex/
-│       ├── main.tex              # Main document
-│       ├── config.tex            # Configuration
-│       ├── Bibliography.bib      # Bibliography
-│       ├── Kapitel/              # Chapters
-│       │   ├── 1_Einleitung.tex
-│       │   ├── 2_Kapitel.tex
-│       │   ├── 3_Schluss.tex
-│       │   ├── Anhang.tex
-│       │   └── KapitelSammlung.tex
-│       └── Vortext/              # Front matter
-│           ├── Titelseite.tex
-│           ├── Vorwort.tex
-│           ├── Abkürzungsverzeichnis.tex
-│           └── Bibliographie.tex
+└── Book/
+    ├── makefile           # Build automation
+    ├── README.md
+    └── src/main/latex/
+        ├── main.tex              # Main document
+        ├── config.tex            # Configuration
+        ├── Bibliography.bib      # Bibliography
+        ├── Kapitel/              # Chapters
+        │   ├── 1_Einleitung.tex
+        │   ├── 2_Kapitel.tex
+        │   ├── 3_Schluss.tex
+        │   ├── Anhang.tex
+        │   └── KapitelSammlung.tex
+        └── Vortext/              # Front matter
+            ├── Titelseite.tex
+            ├── Vorwort.tex
+            ├── Abkürzungsverzeichnis.tex
+            └── Bibliographie.tex
 ```
 
 ## Build Commands
@@ -41,9 +39,6 @@ make clean
 
 # Clean everything including PDF
 make cleanall
-
-# Install TeX dependencies
-make install-deps
 
 # Manual build (alternative)
 cd Book/build/aux && latexmk -pdf main.tex
